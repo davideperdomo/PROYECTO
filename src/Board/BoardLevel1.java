@@ -42,12 +42,12 @@ public class BoardLevel1 extends JPanel implements ActionListener, KeyListener{
     public BoardLevel1() throws IOException{
         this.setFocusable(true);
         this.addKeyListener(this);
-        this.fileplayer = "spriteArcher.png";
-        this.fileplayerw="spriteWarrior.png";
-        this.fileboss = "bossAgua.png";
-        this.filebackground="fondoAgua.png";
-        this.filetileset="tiletestagua.png";
-        this.filemap="level1-1.map";
+        this.fileplayer = "Resources//spriteArcher.png";
+        this.fileplayerw="Resources//spriteWarrior.png";
+        this.fileboss = "Resources//bossAgua.png";
+        this.filebackground="Resources//fondoAgua.png";
+        this.filetileset="Resources//tiletestagua.png";
+        this.filemap="Resources//level1-1.map";
         this.bossheight=300;
         this.man = new Archer();
         this.tilemap = new TileMap();
@@ -63,7 +63,6 @@ public class BoardLevel1 extends JPanel implements ActionListener, KeyListener{
                     //this.boss = new Boss(col*50,row*50,mapas[row][col]);
                     this.boss = new Boss(col*50,bossheight,mapas[row][col]);
                     map.add(boss);
-                    System.out.println("bossfound"+row*50+col*50);
                 }
             }
         }
@@ -99,11 +98,11 @@ public class BoardLevel1 extends JPanel implements ActionListener, KeyListener{
         }
         for(AttackBoss ab:attackboss){
             Rectangle recABoss= ab.getMap();
-            if(recABoss.intersects(recMan)){man.setLife(1);}
+            if(recABoss.intersects(recMan)){man.setLife(3);}
         }
         for(Attack a: atack){
             Rectangle recAttack= a.getRec();
-            if(recAttack.intersects(recBossA)){boss.setLife(5);
+            if(recAttack.intersects(recBossA)){boss.setLife(4);
             man.setAttacking(true);}
         }
         if(man.getLife() <= 0 || man.getY()>= 550) end(false);
@@ -172,7 +171,7 @@ public class BoardLevel1 extends JPanel implements ActionListener, KeyListener{
             man.rightMove(e, m);
         }
         }
-        if(man.atackMove(e)){atack.add(new Attack(man,"spriteArcher.png"));System.out.println("ataque");}
+        if(man.atackMove(e)){atack.add(new Attack(man,"Resources//spriteArcher.png"));}
         man.sprintMove(e);
         man.changePlayer(e);
     }
@@ -193,7 +192,7 @@ public class BoardLevel1 extends JPanel implements ActionListener, KeyListener{
             }
         });
         if(!win)panel.add(new JLabel("Lo sentimos, perdiste"));
-        if(win)panel.add(new JLabel("Felicidados, ganaste"));
+        if(win)panel.add(new JLabel("Felicidades, ganaste"));
         panel.add(boton);
         panel.setVisible(true);
         perdiste.add(panel);

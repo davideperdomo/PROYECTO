@@ -65,10 +65,7 @@ public class Archer extends Person {
         }
     }
     public void downMove(KeyEvent e){
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_DOWN:
-                y += 5;break;
-        }
+        switch (e.getKeyCode()) {case KeyEvent.VK_DOWN:y += 5;break;}
     }
     public boolean atackMove(KeyEvent e){
         boolean atack=false;
@@ -77,10 +74,8 @@ public class Archer extends Person {
     }
 ////
     public void changePlayer(KeyEvent e){
-        if(e.getKeyCode()==KeyEvent.VK_W){System.out.println("changeWarrior");
-        this.idplayer=2;}
-        if(e.getKeyCode()==KeyEvent.VK_A){System.out.println("changeArcher");
-        this.idplayer=1;}
+        if(e.getKeyCode()==KeyEvent.VK_W){this.idplayer=2;}
+        if(e.getKeyCode()==KeyEvent.VK_A){this.idplayer=1;}
     }
     public void sprintMove(KeyEvent e){
         if(e.getKeyCode()==KeyEvent.VK_S&&right){x+=35;}

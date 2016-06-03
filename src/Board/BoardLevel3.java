@@ -13,9 +13,9 @@ import java.io.IOException;
  */
 public class BoardLevel3 extends BoardLevel1{
     public BoardLevel3() throws IOException {
-        super.fileboss = "bossAire.png";
-        super.filebackground="fondoAire.png";
-        super.filetileset="tiletestagua.png";
+        super.fileboss = "Resources//bossAire.png";
+        super.filebackground="Resources//fondoAire.png";
+        super.filetileset="Resources//tiletestagua.png";
         super.bossheight=400;
     }
 }

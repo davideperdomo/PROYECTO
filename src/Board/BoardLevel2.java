@@ -14,10 +14,10 @@ import java.io.IOException;
 public class BoardLevel2 extends BoardLevel1 {
 
     public BoardLevel2() throws IOException {
-        super.fileboss = "bossTierra.png";
-        super.filebackground="fondotest.png";
-        super.filetileset="tiletest.png";
-        super.filemap="level2.map";
+        super.fileboss = "Resources//bossTierra.png";
+        super.filebackground="Resources//fondotest.png";
+        super.filetileset="Resources//tiletest.png";
+        super.filemap="Resources//level2.map";
         super.bossheight=400;
     }
         
